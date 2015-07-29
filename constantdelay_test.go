@@ -4,7 +4,11 @@ import (
 	"testing"
 	"time"
 )
-
+func TestNothing(t *testing.T) {
+	now := 5*time.Minute + 1500*time.Millisecond
+	t.Log(now%time.Second)
+	t.Log(now - now%time.Second)
+}
 func TestConstantDelayNext(t *testing.T) {
 	tests := []struct {
 		time     string
